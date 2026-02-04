@@ -1,0 +1,178 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: 
+        linear-gradient(
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.35)
+        ),
+        url(image.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 950px;
+    padding: 20px;
+}
+
+/* Glass Card */
+.card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-radius: 20px;
+    padding: 35px 45px;
+    box-shadow: 
+        0 30px 60px rgba(0, 0, 0, 0.25),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Title */
+h1 {
+    text-align: center;
+    margin-bottom: 6px;
+    color: #ffffff;
+    font-size: 30px;
+}
+
+.subtitle {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 30px;
+    font-size: 15px;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+/* Inputs */
+input {
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: none;
+    font-size: 15px;
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.25s ease;
+}
+
+input::placeholder {
+    color: #666;
+}
+
+input:focus {
+    outline: none;
+    transform: translateY(-1px);
+    box-shadow:
+        0 0 0 3px rgba(79, 172, 254, 0.35),
+        0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+select {
+    padding: 14px 16px;
+    border-radius: 12px;
+    border: none;
+    font-size: 15px;
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.25s ease;
+    appearance: none;
+    cursor: pointer;
+}
+
+select:focus {
+    outline: none;
+    transform: translateY(-1px);
+    box-shadow:
+        0 0 0 3px rgba(79, 172, 254, 0.35),
+        0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+
+/* Button */
+button {
+    margin-top: 28px;
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #4facfe, #2f80ed);
+    border: none;
+    color: white;
+    font-size: 17px;
+    border-radius: 14px;
+    cursor: pointer;
+    box-shadow: 0 15px 30px rgba(79, 172, 254, 0.4);
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 20px 40px rgba(79, 172, 254, 0.6);
+}
+
+/* Result */
+.result {
+    margin-top: 28px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border-left: 5px solid #4facfe;
+    border-radius: 12px;
+    color: #fff;
+}
+
+.result h2 {
+    margin: 0 0 8px;
+    color: #ffffff;
+}
+
+.result span {
+    font-weight: bold;
+    color: #e3f2ff;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 18px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 13px;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 30px 25px;
+    }
+}
