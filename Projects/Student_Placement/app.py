@@ -1,11 +1,13 @@
 from flask import Flask, render_template, request
+import joblib
+import numpy as np
+import os
 
 app = Flask(__name__)
 
-import joblib
-import numpy as np
-
-model = joblib.load("model.pkl")
+# Load model with proper path handling
+model_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "model.pkl")
+model = joblib.load(model_path)
 
 @app.route("/")
 def home():
@@ -39,4 +41,5 @@ def predict():
     )
 
 if __name__ == "__main__":
-    app.run(debug=False, host="0.0.0.0", port=5000)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(debug=False, host="0.0.0.0", port=port)

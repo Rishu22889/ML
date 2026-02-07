@@ -17,14 +17,36 @@
         <form action="/predict" method="post">
 
             <div class="grid">
-                <input type="number" step="any" name="ssc" placeholder="SSC Marks" required>
-                <input type="number" step="any" name="hsc" placeholder="HSC Marks" required>
-                <input type="number" step="any" name="cgpa" placeholder="CGPA" required>
-                <input type="number" step="any" name="aptitude" placeholder="Aptitude Score" required>
-                <input type="number" step="any" name="certifications" placeholder="Workshops / Certifications Count">
-                <input type="number" step="any" name="projects" placeholder="Projects Count" required>
-                <input type="number" step="any" name="internships" placeholder="Internships Count" required>
-                <input type="number" step="any" name="softskills" placeholder="Soft Skills Rating" required>
+                <input type="number" step="0.01" name="ssc"
+       placeholder="SSC Marks (0–100)"
+       min="0" max="100" required>
+
+<input type="number" step="0.01" name="hsc"
+       placeholder="HSC Marks (0–100)"
+       min="0" max="100" required>
+
+<input type="number" step="0.01" name="cgpa"
+       placeholder="CGPA (0–10)"
+       min="0" max="10" required>
+
+<input type="number" step="1" name="aptitude"
+       placeholder="Aptitude Score (0–100)"
+       min="0" max="100" required>
+
+<input type="number" step="1" name="certifications"
+       placeholder="Workshops / Certifications" required>
+
+<input type="number" step="1" name="projects"
+       placeholder="Projects Count" required>
+
+<input type="number" step="1" name="internships"
+       placeholder="Internships Count (0–10)"
+       min="0" max="10" required>
+
+<input type="number" step="0.1" name="softskills"
+       placeholder="Soft Skills Rating (0–5)"
+       min="0" max="5" required>
+
                 <select name="extracurricular" required>
                     <option value="" disabled selected>Extracurricular Activities</option>
                     <option value="1">Yes</option>
