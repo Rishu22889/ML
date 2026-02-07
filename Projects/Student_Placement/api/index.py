@@ -1,11 +1,13 @@
 from flask import Flask, render_template, request
-
-app = Flask(__name__)
-
 import joblib
 import numpy as np
+import os
 
-model = joblib.load("model.pkl")
+app = Flask(__name__, template_folder='../templates', static_folder='../static')
+
+# Load model
+model_path = os.path.join(os.path.dirname(__file__), '..', 'model.pkl')
+model = joblib.load(model_path)
 
 @app.route("/")
 def home():
@@ -37,6 +39,3 @@ def predict():
         prediction = result,
         probability = round(prob * 100, 2)
     )
-
-if __name__ == "__main__":
-    app.run(debug=False, host="0.0.0.0", port=5000)
